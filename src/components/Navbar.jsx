@@ -2,29 +2,39 @@ import React from "react";
 import styled from "styled-components";
 import sbm_logo from "../images/sbm logo (1).jpg";
 
-const Navbar = () => {
+const Navbar = ({ isMenuOpen, toggleMenu }) => {
   return (
-    <StyledNav>
-      <StyledLogo className="logo">
-        <img src={sbm_logo} alt="Sbm Physioclinic" />
-      </StyledLogo>
-      <StyledNavComponents>
-        <div className="active">
-          <a href="#home">Home</a>
-        </div>
-        <div>
-          <a href="#services">Services</a>
-        </div>
-        <div>
-          <a href="#doctors">Doctors</a>
-        </div>
-        <div>
-          <a href="#contact">Contact Us</a>
-        </div>
-      </StyledNavComponents>
-    </StyledNav>
+    <StyledNavWrapper className="nav-wrapper">
+      <StyledNav>
+        <StyledLogo className="logo">
+          <img src={sbm_logo} alt="Sbm Physioclinic" />
+        </StyledLogo>
+        <StyledNavComponents>
+          <div>
+            <a href="#home">Home</a>
+          </div>
+          <div>
+            <a href="#services">Services</a>
+          </div>
+          <div>
+            <a href="#doctors">Doctors</a>
+          </div>
+          <div>
+            <a href="#contact">Contact Us</a>
+          </div>
+          <div onClick={toggleMenu}>
+            <i className="pi pi-bars" style={{ fontSize: "1em" }}></i>
+          </div>
+        </StyledNavComponents>
+      </StyledNav>
+    </StyledNavWrapper>
   );
 };
+
+const StyledNavWrapper = styled.div`
+  position: relative;
+  box-shadow: 0px 2px 150px #b8ecff;
+`;
 
 const StyledNav = styled.div`
   margin: 0 auto;
