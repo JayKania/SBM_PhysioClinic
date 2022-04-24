@@ -2,27 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import sbm_logo from "../images/sbm logo (1).jpg";
 
-const Navbar = ({ isMenuOpen, toggleMenu }) => {
+const Navbar = ({ isMenuOpen, toggleMenu, isNavVisible }) => {
   return (
-    <StyledNavWrapper className="nav-wrapper">
+    <StyledNavWrapper
+      className={`nav-wrapper ${isMenuOpen ? "menu-open" : "menu-close"} ${
+        !isNavVisible ? "nav-inactive" : ""
+      }`}
+    >
       <StyledNav>
         <StyledLogo className="logo">
           <img src={sbm_logo} alt="Sbm Physioclinic" />
+          <span>SBM Physioclinic</span>
         </StyledLogo>
         <StyledNavComponents>
-          <div>
+          <div className="nav-item">
             <a href="#home">Home</a>
           </div>
-          <div>
+          <div className="nav-item">
             <a href="#services">Services</a>
           </div>
-          <div>
+          <div className="nav-item">
             <a href="#doctors">Doctors</a>
           </div>
-          <div>
+          <div className="nav-item">
             <a href="#contact">Contact Us</a>
           </div>
-          <div onClick={toggleMenu}>
+          <div onClick={toggleMenu} className="burger-menu">
             <i className="pi pi-bars" style={{ fontSize: "1em" }}></i>
           </div>
         </StyledNavComponents>
@@ -32,30 +37,68 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
 };
 
 const StyledNavWrapper = styled.div`
-  position: relative;
   box-shadow: 0px 2px 150px #b8ecff;
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  transition: top 300ms ease, transform 250ms ease;
+  &.nav-inactive {
+    transform: translateY(-100%);
+  }
+  @media only screen and (max-width: 480px) {
+    &.menu-open {
+      box-shadow: none;
+      z-index: 0;
+    }
+  }
 `;
 
 const StyledNav = styled.div`
   margin: 0 auto;
   background: white;
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const StyledLogo = styled.div`
   background: white;
+  display: flex;
+  align-items: center;
+  span {
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
   img {
     max-height: 120px;
     width: 100px;
+  }
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    span {
+      font-size: 1.175rem;
+    }
+    img {
+      max-height: 75px;
+      width: 75px;
+    }
   }
 `;
 
 const StyledNavComponents = styled.div`
   background: transparent;
   display: flex;
+
   div {
     margin: 1rem;
     padding-bottom: 0.5rem;
@@ -90,6 +133,19 @@ const StyledNavComponents = styled.div`
       text-decoration: none;
       color: #3f4c6e;
       background: transparent;
+    }
+  }
+  .burger-menu {
+    display: none;
+  }
+  // mobile
+
+  @media only screen and (max-width: 480px) {
+    .nav-item {
+      display: none;
+    }
+    .burger-menu {
+      display: block;
     }
   }
 `;

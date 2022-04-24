@@ -22,8 +22,16 @@ const Home = () => {
 
 const StyledHome = styled.div`
   margin: 10rem auto;
-  width: 80%;
+  flex-basis: 80%;
   display: flex;
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    margin: 5rem auto;
+    flex-basis: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 const StyledContent = styled.div`
@@ -57,16 +65,36 @@ const StyledContent = styled.div`
       transform: translateY(-3px);
     }
   }
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    padding: 2rem 1rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .btn {
+      font-size: 0.95rem;
+    }
+  }
 `;
 
 const StyledImage = styled.div`
-  max-width: 50%;
+  width: 50%;
   /* padding: 2rem; */
 
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    width: 100%;
   }
 `;
 

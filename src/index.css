@@ -5,4 +5,11 @@
   /* background: #f0faff; */
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
+  
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
 }

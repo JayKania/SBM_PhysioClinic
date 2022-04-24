@@ -5,12 +5,13 @@ import neuro_rehab from "../images/neuro rehab.jpg";
 import sports_rehab from "../images/sports rehab.jpg";
 import geriatric_rehab from "../images/geriatric rehab.jpg";
 import ServiceCard from "./ServiceCard";
+import wave from "../images/wave.svg";
 
 const Services = () => {
   const services = [
     {
       title: "Orthopedic Rehabilitation",
-      data: "Orthopedic rehabilitation is a therapeutic approach to recovery, the purpose of which is to correct musculoskeletal limitations and alleviate pain from trauma, illness, or surgery.",
+      data: "Orthopedic rehabilitation is a therapeutic approach to recovery, the purpose of which is to correct musculoskeletal limitations.",
       img: ortho_rehab,
     },
     {
@@ -54,11 +55,15 @@ const Services = () => {
           ></path>
         </svg>
       </div>
+      {/* <div className="wave-svg">
+        <img src={wave} alt="wave" />
+      </div> */}
       <h1>Our Services</h1>
       <p>
         We offer complete healthcare to individuals with various health concerns
       </p>
       <StyledCards>{cards}</StyledCards>
+      <div className="more"> And much more ...</div>
     </StyledServices>
   );
 };
@@ -66,6 +71,8 @@ const Services = () => {
 const StyledServices = styled.div`
   background: #e8f6fe;
   margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  /* padding-bottom: 1rem; */
   position: relative;
   .service-wave {
     position: absolute;
@@ -86,6 +93,7 @@ const StyledServices = styled.div`
   .service-wave .shape-fill {
     fill: white;
   }
+
   h1 {
     margin-top: -5rem;
     padding-top: 10rem;
@@ -103,13 +111,41 @@ const StyledServices = styled.div`
     width: 35%;
     color: #3f4c6e;
   }
+
+  .more {
+    width: fit-content;
+    margin: 2rem auto;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #3f4c6e;
+    /* border: 1px solid #3f4c6e; */
+    padding: 1rem;
+    border-radius: 5px;
+    /* box-shadow: 0px 1px 5px #3f4c6e; */
+  }
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.15rem;
+      width: 80%;
+    }
+  }
 `;
 
 const StyledCards = styled.div`
   width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
+
+  // mobile
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export default Services;
