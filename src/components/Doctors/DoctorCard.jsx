@@ -49,6 +49,8 @@ const StyledDoctorCard = styled.div`
       object-fit: cover;
     }
   }
+
+  //mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;
   }

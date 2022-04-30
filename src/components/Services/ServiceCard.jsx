@@ -14,7 +14,9 @@ const StyledCard = styled.div`
   flex-grow: 1;
   min-height: 250px;
   margin-top: 1rem;
+
   .p-card {
+    border-top: 4px solid rgb(162, 188, 218);
     margin: 1rem;
     height: 95%;
     background: white;

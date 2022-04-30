@@ -97,11 +97,13 @@ const DoctorCards = styled.div`
   padding-bottom: 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
+
   // mobile
   @media only screen and (max-width: 480px) {
-    /* flex-direction: column; */
     width: 100%;
   }
+
+  //tablet
   @media only screen and (max-width: 912px) {
     width: 95%;
   }

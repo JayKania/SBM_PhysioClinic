@@ -107,14 +107,12 @@ const StyledCards = styled.div`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
-  /* overflow-y: scroll; */
 
   // mobile
   @media only screen and (max-width: 480px) {
-    /* grid-template-columns: 1fr; */
     width: 100%;
   }
+
   // tablet
   @media only screen and (max-width: 912px) {
     width: 100%;
