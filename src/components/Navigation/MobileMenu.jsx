@@ -1,5 +1,5 @@
 import React from "react";
-import menu_blurry_gradient from "../images/menu-blurry-gradient.svg";
+import menu_blurry_gradient from "../../images/menu-blurry-gradient.svg";
 import styled from "styled-components";
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {

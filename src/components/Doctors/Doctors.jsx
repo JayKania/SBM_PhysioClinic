@@ -1,18 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import ServiceCard from "./ServiceCard";
-import wave from "../images/wave.svg";
-import { data } from "../data";
+import DoctorCard from "./DoctorCard";
+import { doctors_data } from "./doctors_data";
 
-const Services = () => {
-  const services = data;
+const Doctors = () => {
+  const doctors = doctors_data;
 
-  const cards = services.map((service) => {
-    return <ServiceCard title={service.title} data={service.data} />;
+  const cards = doctors.map((doctor) => {
+    return (
+      <DoctorCard
+        img={doctor.img}
+        name={doctor.name}
+        qual={doctor.qualifications}
+        bio={doctor.data}
+      />
+    );
   });
+
   return (
-    <StyledServices id="services">
-      <div className="service-wave">
+    <StyledDoctors id="doctors">
+      <div className="doctors-wave">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,23 +32,18 @@ const Services = () => {
           ></path>
         </svg>
       </div>
-      <h1>Our Services</h1>
+      <h1>Our Team</h1>
       <p>
         We offer complete healthcare to individuals with various health concerns
       </p>
-      <StyledCards>{cards}</StyledCards>
-      <div className="more"> And much more ...</div>
-    </StyledServices>
+      <DoctorCards>{cards}</DoctorCards>
+    </StyledDoctors>
   );
 };
 
-const StyledServices = styled.div`
-  background: #e8f6fe;
-  margin: 0 auto;
-  padding: 1rem 0 1rem 0;
-  /* padding-bottom: 1rem; */
+const StyledDoctors = styled.div`
   position: relative;
-  .service-wave {
+  .doctors-wave {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,20 +52,18 @@ const StyledServices = styled.div`
     line-height: 0;
   }
 
-  .service-wave svg {
+  .doctors-wave svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 150px;
   }
 
-  .service-wave .shape-fill {
-    fill: white;
+  .doctors-wave .shape-fill {
+    fill: #e8f6fe;
   }
-
   h1 {
-    margin-top: -5rem;
-    padding-top: 10rem;
+    padding-top: 7rem;
     font-size: 3.5rem;
     color: #3f4c6e;
     font-weight: 900;
@@ -78,19 +78,6 @@ const StyledServices = styled.div`
     width: 35%;
     color: #3f4c6e;
   }
-
-  .more {
-    width: fit-content;
-    margin: 2rem auto;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #3f4c6e;
-    /* border: 1px solid #3f4c6e; */
-    padding: 1rem;
-    border-radius: 5px;
-    /* box-shadow: 0px 1px 5px #3f4c6e; */
-  }
-
   // mobile
   @media only screen and (max-width: 480px) {
     h1 {
@@ -103,16 +90,21 @@ const StyledServices = styled.div`
   }
 `;
 
-const StyledCards = styled.div`
-  width: 90%;
-  margin: 0 auto;
+const DoctorCards = styled.div`
   display: flex;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
   flex-wrap: wrap;
-  /* align-items: center; */
+  justify-content: space-between;
   // mobile
   @media only screen and (max-width: 480px) {
-    /* grid-template-columns: 1fr; */
+    /* flex-direction: column; */
+    width: 100%;
+  }
+  @media only screen and (max-width: 912px) {
+    width: 95%;
   }
 `;
 
-export default Services;
+export default Doctors;

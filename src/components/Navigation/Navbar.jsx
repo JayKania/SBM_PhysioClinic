@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import sbm_logo from "../images/sbm logo (1).jpg";
+import sbm_logo from "../../images/sbm logo (1).jpg";
 
 const Navbar = ({ isMenuOpen, toggleMenu, isNavVisible }) => {
   return (
@@ -138,14 +138,23 @@ const StyledNavComponents = styled.div`
   .burger-menu {
     display: none;
   }
-  // mobile
 
+  // mobile
   @media only screen and (max-width: 480px) {
     .nav-item {
       display: none;
     }
     .burger-menu {
       display: block;
+    }
+  }
+
+  // tablet
+  @media only screen and (max-width: 912px) {
+    .nav-item {
+      a {
+        font-size: 1.2rem;
+      }
     }
   }
 `;

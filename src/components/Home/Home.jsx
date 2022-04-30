@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import vector from "../images/6099962.jpg";
+import vector from "../../images/6099962.jpg";
 
 const Home = () => {
   return (
@@ -22,7 +22,6 @@ const Home = () => {
 
 const StyledHome = styled.div`
   margin: 10rem auto;
-  flex-basis: 80%;
   display: flex;
 
   // mobile
@@ -35,7 +34,7 @@ const StyledHome = styled.div`
 `;
 
 const StyledContent = styled.div`
-  width: 50%;
+  flex-basis: 50%;
   padding: 2rem;
   h1 {
     font-size: 3.5rem;
@@ -83,9 +82,9 @@ const StyledContent = styled.div`
 `;
 
 const StyledImage = styled.div`
-  width: 50%;
+  /* width: 50%; */
+  flex-basis: 50%;
   /* padding: 2rem; */
-
   img {
     height: 100%;
     width: 100%;
@@ -94,7 +93,7 @@ const StyledImage = styled.div`
 
   // mobile
   @media only screen and (max-width: 480px) {
-    width: 100%;
+    /* width: 100%; */
   }
 `;
 

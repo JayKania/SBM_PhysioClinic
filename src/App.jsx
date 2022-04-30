@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Doctors from "./components/Doctors";
-import Home from "./components/Home";
-import MobileMenu from "./components/MobileMenu";
-import Navbar from "./components/Navbar";
-import Services from "./components/Services";
+import Doctors from "./components/Doctors/Doctors";
+import Home from "./components/Home/Home";
+import MobileMenu from "./components/Navigation/MobileMenu";
+import Navbar from "./components/Navigation/Navbar";
+import Services from "./components/Services/Services";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

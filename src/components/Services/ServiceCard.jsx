@@ -3,19 +3,17 @@ import { Card } from "primereact/card";
 import styled from "styled-components";
 
 const ServiceCard = ({ title, data, img }) => {
-  const header = <img alt="Card" src={img} />;
   return (
     <StyledCard>
-      <Card title={title}>
-        {/* <Card title={title} header={header}> */}
-        {data}
-      </Card>
+      <Card title={title}>{data}</Card>
     </StyledCard>
   );
 };
 const StyledCard = styled.div`
   flex-basis: 33.33%;
   flex-grow: 1;
+  min-height: 250px;
+  margin-top: 1rem;
   .p-card {
     margin: 1rem;
     height: 95%;
@@ -25,6 +23,7 @@ const StyledCard = styled.div`
     border-radius: 10px;
     overflow: hidden;
     .p-card-body {
+      text-align: center;
       .p-card-title {
         text-align: center;
       }
