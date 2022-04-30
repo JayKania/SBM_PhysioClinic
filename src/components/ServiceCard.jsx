@@ -6,13 +6,16 @@ const ServiceCard = ({ title, data, img }) => {
   const header = <img alt="Card" src={img} />;
   return (
     <StyledCard>
-      <Card title={title} header={header}>
+      <Card title={title}>
+        {/* <Card title={title} header={header}> */}
         {data}
       </Card>
     </StyledCard>
   );
 };
 const StyledCard = styled.div`
+  flex-basis: 33.33%;
+  flex-grow: 1;
   .p-card {
     margin: 1rem;
     height: 95%;
@@ -21,33 +24,16 @@ const StyledCard = styled.div`
     box-shadow: 0px 2px 5px #7889b5;
     border-radius: 10px;
     overflow: hidden;
-    .p-card-header {
-      img {
-        height: 300px;
+    .p-card-body {
+      .p-card-title {
+        text-align: center;
       }
     }
   }
-  :nth-child(odd) {
-    .p-card {
-      .p-card-header {
-        img {
-          height: 300px;
-          width: 110%;
-        }
-      }
-    }
-  }
+
   // mobile
   @media only screen and (max-width: 480px) {
-    .p-card {
-      min-height: 400px;
-      .p-card-header,
-      .p-card-header:nth-child(odd) {
-        img {
-          height: 300px;
-        }
-      }
-    }
+    flex-direction: column;
   }
 `;
 export default ServiceCard;

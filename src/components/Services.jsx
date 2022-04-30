@@ -1,44 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import ortho_rehab from "../images/ortho rehab.jpg";
-import neuro_rehab from "../images/neuro rehab.jpg";
-import sports_rehab from "../images/sports rehab.jpg";
-import geriatric_rehab from "../images/geriatric rehab.jpg";
 import ServiceCard from "./ServiceCard";
 import wave from "../images/wave.svg";
+import { data } from "../data";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Orthopedic Rehabilitation",
-      data: "Orthopedic rehabilitation is a therapeutic approach to recovery, the purpose of which is to correct musculoskeletal limitations.",
-      img: ortho_rehab,
-    },
-    {
-      title: "Neurological Rehabilitation",
-      data: "Neurological rehabilitation is a doctor-supervised program designed for people with diseases, injury, or disorders of the nervous system.",
-      img: neuro_rehab,
-    },
-    {
-      title: "Sports Rehabilitation",
-      data: "Sports Rehabilitation help people to maintain and improve their health and fitness, recover from and prevent injury and reduce pain using exercise, movement and therapy",
-      img: sports_rehab,
-    },
-    {
-      title: "Geriatric Rehabilitation",
-      data: "Geriatric Rehabilitation aims to restore function or enhance residual functional capability and improving the quality of life in older people ie particularly those with disabling impairments and/or frailty.",
-      img: geriatric_rehab,
-    },
-  ];
+  const services = data;
 
   const cards = services.map((service) => {
-    return (
-      <ServiceCard
-        title={service.title}
-        data={service.data}
-        img={service.img}
-      />
-    );
+    return <ServiceCard title={service.title} data={service.data} />;
   });
   return (
     <StyledServices id="services">
@@ -55,9 +25,6 @@ const Services = () => {
           ></path>
         </svg>
       </div>
-      {/* <div className="wave-svg">
-        <img src={wave} alt="wave" />
-      </div> */}
       <h1>Our Services</h1>
       <p>
         We offer complete healthcare to individuals with various health concerns
@@ -139,12 +106,12 @@ const StyledServices = styled.div`
 const StyledCards = styled.div`
   width: 90%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
   // mobile
   @media only screen and (max-width: 480px) {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 `;
 
