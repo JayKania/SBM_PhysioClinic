@@ -14,7 +14,7 @@ const Navbar = ({ isMenuOpen, toggleMenu, isNavVisible }) => {
           <img src={sbm_logo} alt="Sbm Physioclinic" />
           <span>SBM Physioclinic</span>
         </StyledLogo>
-        <StyledNavComponents>
+        <StyledNavComponents className="nav-items">
           <div className="nav-item">
             <a href="#home">Home</a>
           </div>
@@ -49,7 +49,6 @@ const StyledNavWrapper = styled.div`
   }
   @media only screen and (max-width: 480px) {
     &.menu-open {
-      box-shadow: none;
       z-index: 0;
     }
   }
@@ -66,6 +65,8 @@ const StyledNav = styled.div`
   // mobile
   @media only screen and (max-width: 480px) {
     width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 `;
 
@@ -73,6 +74,7 @@ const StyledLogo = styled.div`
   background: white;
   display: flex;
   align-items: center;
+  margin-right: 1rem;
   span {
     font-family: "Dancing Script", cursive;
     font-weight: 700;
@@ -85,6 +87,7 @@ const StyledLogo = styled.div`
 
   // mobile
   @media only screen and (max-width: 480px) {
+    flex-direction: row-reverse;
     span {
       font-size: 1.175rem;
     }

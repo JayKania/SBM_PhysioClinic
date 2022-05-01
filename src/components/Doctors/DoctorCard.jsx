@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import team_1 from "../../images/team (1)_1.jpg";
 
 const DoctorCard = ({ img, name, qual, bio }) => {
   return (
@@ -24,6 +23,8 @@ const DoctorCard = ({ img, name, qual, bio }) => {
 const StyledDoctorCard = styled.div`
   /* width: 30%; */
   flex-basis: 25%;
+  min-width: 25%;
+  max-width: 30%;
   flex-grow: 1;
   margin: 2rem 1rem;
   display: flex;
@@ -53,6 +54,7 @@ const StyledDoctorCard = styled.div`
   //mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;
+    max-width: 100%;
   }
 `;
 
@@ -73,6 +75,14 @@ const StyledContent = styled.div`
     width: 80%;
     margin: 1rem auto;
     font-weight: 300;
+  }
+
+  // tablet
+  @media only screen and (max-width: 912px) {
+    .bio {
+      width: 100%;
+      padding: 0 0.5rem;
+    }
   }
 `;
 

@@ -6,8 +6,10 @@ import { data } from "./services_data";
 const Services = () => {
   const services = data;
 
-  const cards = services.map((service) => {
-    return <ServiceCard title={service.title} data={service.data} />;
+  const cards = services.map((service, index) => {
+    return (
+      <ServiceCard title={service.title} data={service.data} key={index} />
+    );
   });
   return (
     <StyledServices id="services">
@@ -38,7 +40,6 @@ const StyledServices = styled.div`
   background: #e8f6fe;
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
-  /* padding-bottom: 1rem; */
   position: relative;
   .service-wave {
     position: absolute;
@@ -103,7 +104,7 @@ const StyledServices = styled.div`
 `;
 
 const StyledCards = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;

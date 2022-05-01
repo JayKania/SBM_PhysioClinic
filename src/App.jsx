@@ -28,7 +28,6 @@ const App = () => {
 
   useEffect(() => {
     if (typeof window !== undefined) {
-      // console.log(window.scrollY);
       window.addEventListener("scroll", controlNavBar);
     }
     return () => {
