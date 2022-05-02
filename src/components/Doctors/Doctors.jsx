@@ -143,7 +143,7 @@ const StyledButtons = styled.div`
     border: none;
     border-radius: 50%;
     box-shadow: 0px 2px 5px grey;
-    transition: transform 200ms ease;
+    transition: transform 200ms ease, box-shadow 200ms ease;
     :hover {
       cursor: pointer;
       transform: translateY(-5%);
@@ -154,6 +154,7 @@ const StyledButtons = styled.div`
       color: #626ee3;
     }
     :active {
+      box-shadow: 0px 2px 5px grey;
       transform: translateY(0);
     }
   }

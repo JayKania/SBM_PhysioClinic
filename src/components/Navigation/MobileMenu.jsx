@@ -4,6 +4,7 @@ import styled from "styled-components";
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
   return (
     <StyledMenuWrapper className={`menu-wrapper ${isMenuOpen ? "active" : ""}`}>
+      <div className="backdrop"></div>
       <StyledMenu className="menu">
         <i
           className="pi pi-times"
@@ -64,7 +65,6 @@ const StyledMenu = styled.div`
   .pi-times {
     position: absolute;
     right: 0;
-    z-index: 101;
     margin: 1rem;
     color: white;
     :hover {

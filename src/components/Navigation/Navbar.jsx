@@ -47,11 +47,6 @@ const StyledNavWrapper = styled.div`
   &.nav-inactive {
     transform: translateY(-100%);
   }
-  @media only screen and (max-width: 480px) {
-    &.menu-open {
-      z-index: 0;
-    }
-  }
 `;
 
 const StyledNav = styled.div`
