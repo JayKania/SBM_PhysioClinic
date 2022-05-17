@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const DoctorCard = ({ img, name, qual, bio }) => {
+const DoctorCard = ({ img, name, qual, bio, visibility }) => {
   return (
-    <StyledDoctorCard>
+    <StyledDoctorCard className={visibility}>
       <div className="img">
         <img src={img} alt="doc_img" />
       </div>
@@ -21,7 +21,6 @@ const DoctorCard = ({ img, name, qual, bio }) => {
 };
 
 const StyledDoctorCard = styled.div`
-  /* width: 30%; */
   flex-basis: 25%;
   min-width: 25%;
   max-width: 30%;
@@ -35,11 +34,13 @@ const StyledDoctorCard = styled.div`
   position: relative;
   min-height: 280px;
   border-top: 4px solid rgb(162, 188, 218);
+  transition: box-shadow 250ms ease, transform 250ms ease;
+  /* padding: 0.5rem; */
   .img {
     position: absolute;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     overflow: hidden;
     top: -30px;
     left: calc(50% - 30px);
@@ -50,7 +51,12 @@ const StyledDoctorCard = styled.div`
       object-fit: cover;
     }
   }
-
+  :hover {
+    -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+    -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+    box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+    transform: translateY(-2%);
+  }
   //mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;
@@ -67,14 +73,14 @@ const StyledContent = styled.div`
     color: #3f4c6e;
   }
   .qualifications {
-    font-size: 1rem;
     margin-top: 0.7rem;
     color: #3f4c6e;
   }
   .bio {
-    width: 80%;
+    width: 100%;
     margin: 1rem auto;
-    font-weight: 300;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   // tablet

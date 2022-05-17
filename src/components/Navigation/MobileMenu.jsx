@@ -33,6 +33,12 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           </div>
           <div onClick={toggleMenu}>
             <div>
+              <i className="pi pi-camera" style={{ fontSize: "1.2em" }}></i>
+            </div>
+            <a href="#gallery">Gallery</a>
+          </div>
+          <div onClick={toggleMenu}>
+            <div>
               <i className="pi pi-phone" style={{ fontSize: "1.2em" }}></i>
             </div>
             <a href="#contact">Contact Us</a>

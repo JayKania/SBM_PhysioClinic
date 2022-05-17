@@ -23,7 +23,7 @@ const Home = () => {
 const StyledHome = styled.div`
   margin: 10rem auto;
   display: flex;
-
+  flex-wrap: wrap;
   // mobile
   @media only screen and (max-width: 480px) {
     margin: 5rem auto;
@@ -36,6 +36,7 @@ const StyledHome = styled.div`
 const StyledContent = styled.div`
   flex-basis: 50%;
   padding: 2rem;
+  align-self: center;
   h1 {
     font-size: 3.5rem;
     color: #3f4c6e;
