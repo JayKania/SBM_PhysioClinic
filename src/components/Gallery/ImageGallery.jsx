@@ -25,13 +25,8 @@ const ImageGallery = () => {
 const responsiveOptions = [
   {
     breakpoint: "912px",
-    numVisible: 3,
-    numScroll: 3,
-  },
-  {
-    breakpoint: "768px",
-    numVisible: 2,
-    numScroll: 2,
+    numVisible: 1,
+    numScroll: 1,
   },
   {
     breakpoint: "482px",
@@ -146,28 +141,27 @@ const StyledImageGallery = styled.div`
 `;
 
 const StyledImageCard = styled.div`
-  margin: 2rem auto;
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
+  margin: 2rem 2rem;
   -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-  /* border: 1px solid #9e9e9e; */
-  background: grey;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   img {
     height: 100%;
     width: 100%;
+    transform: translateY(0.8%);
     object-fit: cover;
   }
 
   // mobile
   @media only screen and (max-width: 482px) {
-    height: 300px;
-    width: 300px;
-    box-shadow: 6px 6px 10px -5px rgba(105, 105, 105, 0.75);
+    margin: 1rem 1 rem;
+    box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+    img {
+      height: 105%;
+      width: 105%;
+    }
   }
 `;
 
