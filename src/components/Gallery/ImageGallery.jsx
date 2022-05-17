@@ -16,7 +16,8 @@ const ImageGallery = () => {
         numVisible={3}
         numScroll={1}
         responsiveOptions={responsiveOptions}
-        autoplayInterval="2500"
+        // autoplayInterval="2500"
+        circular={true}
       ></Carousel>
     </StyledImageGallery>
   );
@@ -76,7 +77,6 @@ const StyledImageGallery = styled.div`
   width: 90%;
   margin: 2rem auto;
   .p-carousel {
-    /* background: black; */
     .p-carousel-content {
       .p-carousel-container {
         button {
@@ -141,27 +141,16 @@ const StyledImageGallery = styled.div`
 `;
 
 const StyledImageCard = styled.div`
-  margin: 2rem 2rem;
-  -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-  -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-  box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  margin: 0rem 1rem;
   border-radius: 15px;
-  overflow: hidden;
   img {
     height: 100%;
     width: 100%;
     transform: translateY(0.8%);
     object-fit: cover;
   }
-
   // mobile
   @media only screen and (max-width: 482px) {
-    margin: 1rem 1 rem;
-    box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    img {
-      height: 105%;
-      width: 105%;
-    }
   }
 `;
 
