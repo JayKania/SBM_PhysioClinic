@@ -4,10 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import "primereact/resources/themes/md-dark-indigo/theme.css"; // themes
-import "primereact/resources/primereact.min.css"; //core css
-import "primeicons/primeicons.css"; // icons
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

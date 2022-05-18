@@ -12,16 +12,16 @@ import interior_11 from "../../images/interior (11).jpg";
 import interior_12 from "../../images/interior (12).jpg";
 
 export const images = [
-  interior_1,
-  interior_2,
-  interior_3,
-  interior_4,
-  interior_5,
-  interior_6,
-  interior_7,
-  interior_8,
-  interior_9,
-  interior_10,
-  interior_11,
-  interior_12,
+  { img: interior_1 },
+  { img: interior_2 },
+  { img: interior_3 },
+  { img: interior_4 },
+  { img: interior_5 },
+  { img: interior_6 },
+  { img: interior_7 },
+  { img: interior_8 },
+  { img: interior_9 },
+  { img: interior_10 },
+  { img: interior_11 },
+  { img: interior_12 },
 ];

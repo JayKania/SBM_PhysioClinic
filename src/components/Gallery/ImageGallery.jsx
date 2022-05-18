@@ -3,6 +3,8 @@ import { Carousel } from "primereact/carousel";
 import { images } from "./gallery_data";
 import styled from "styled-components";
 
+const products = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 const ImageGallery = () => {
   return (
     <StyledImageGallery id="gallery">
@@ -12,12 +14,11 @@ const ImageGallery = () => {
       </StyledHeader>
       <Carousel
         value={images}
-        itemTemplate={ImageCard}
+        itemTemplate={itemTemplate}
         numVisible={3}
         numScroll={1}
         responsiveOptions={responsiveOptions}
-        // autoplayInterval="2500"
-        circular={true}
+        autoplayInterval="2500"
       ></Carousel>
     </StyledImageGallery>
   );
@@ -36,10 +37,10 @@ const responsiveOptions = [
   },
 ];
 
-const ImageCard = (image) => {
+const itemTemplate = (image) => {
   return (
     <StyledImageCard>
-      <img src={image} alt="" srcset="" />
+      <img src={image.img} alt="interior img" srcset="" />
     </StyledImageCard>
   );
 };
@@ -146,8 +147,6 @@ const StyledImageCard = styled.div`
   img {
     height: 100%;
     width: 100%;
-    transform: translateY(0.8%);
-    object-fit: cover;
   }
   // mobile
   @media only screen and (max-width: 482px) {
