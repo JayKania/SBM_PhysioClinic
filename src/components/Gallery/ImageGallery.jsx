@@ -3,14 +3,12 @@ import { Carousel } from "primereact/carousel";
 import { images } from "./gallery_data";
 import styled from "styled-components";
 
-const products = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const ImageGallery = () => {
   return (
     <StyledImageGallery id="gallery">
       <StyledHeader>
         <h1>Gallery</h1>
-        <p>Take a look at our ultra-modern and well maintained equipments</p>
+        <p>Take a look at our equipments and the facilities we provide.</p>
       </StyledHeader>
       <Carousel
         value={images}
@@ -27,7 +25,7 @@ const ImageGallery = () => {
 const responsiveOptions = [
   {
     breakpoint: "912px",
-    numVisible: 1,
+    numVisible: 2,
     numScroll: 1,
   },
   {
@@ -75,12 +73,14 @@ const StyledHeader = styled.div`
 `;
 
 const StyledImageGallery = styled.div`
-  width: 90%;
-  margin: 2rem auto;
+  /* padding: 2rem; */
   .p-carousel {
+    width: 90%;
+    margin: 0 auto;
     .p-carousel-content {
       .p-carousel-container {
         button {
+          background: white;
           color: rgb(147, 147, 227);
           border-radius: 50%;
           box-shadow: 0px 2px 5px grey;
@@ -119,8 +119,8 @@ const StyledImageGallery = styled.div`
 
   // mobile
   @media only screen and (max-width: 482px) {
-    width: 100%;
     .p-carousel {
+      width: 100%;
       .p-carousel-content {
         .p-carousel-container {
           button {
@@ -142,8 +142,14 @@ const StyledImageGallery = styled.div`
 `;
 
 const StyledImageCard = styled.div`
-  margin: 0rem 1rem;
+  margin: 1rem 1rem;
   border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  transform: translateY(-2%);
+  background: white;
   img {
     height: 100%;
     width: 100%;

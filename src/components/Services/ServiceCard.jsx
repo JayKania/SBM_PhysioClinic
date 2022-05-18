@@ -18,7 +18,10 @@ const StyledServiceCard = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  box-shadow: 0px 2px 5px grey;
+  /* box-shadow: 0px 2px 5px grey; */
+  -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
 
   /* border: 0.1px solid black; */
   border-radius: 5px;
@@ -30,12 +33,6 @@ const StyledServiceCard = styled.div`
   margin-top: 1rem;
   transition: box-shadow 250ms ease, transform 250ms ease;
 
-  :hover {
-    -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    transform: translateY(-2%);
-  }
   // mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;

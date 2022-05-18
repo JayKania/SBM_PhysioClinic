@@ -29,7 +29,10 @@ const StyledDoctorCard = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  box-shadow: 0px 2px 5px grey;
+  /* box-shadow: 0px 2px 5px grey; */
+  -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   border-radius: 5px;
   position: relative;
   min-height: 280px;
@@ -50,12 +53,6 @@ const StyledDoctorCard = styled.div`
       width: 100%;
       object-fit: cover;
     }
-  }
-  :hover {
-    -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-    transform: translateY(-2%);
   }
   //mobile
   @media only screen and (max-width: 480px) {
