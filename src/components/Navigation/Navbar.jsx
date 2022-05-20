@@ -67,8 +67,9 @@ const StyledNav = styled.div`
     justify-content: space-between;
   }
 
-  @media only screen and (max-width: 912px) {
-    width: 90%;
+  // tablet
+  @media only screen and (min-width: 768px) {
+    width: 95%;
     flex-direction: row-reverse;
     justify-content: space-between;
   }

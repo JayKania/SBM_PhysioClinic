@@ -64,7 +64,8 @@ const StyledMenuWrapper = styled.div`
     transform: translateX(0%);
   }
 
-  @media only screen and (max-width: 912px) {
+  // tablet
+  @media only screen and (min-width: 768px) {
     width: 50%;
   }
 `;
