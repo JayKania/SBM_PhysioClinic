@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const DoctorCard = ({ img, name, qual, bio }) => {
   const { ref, inView } = useInView({
-    // triggerOnce: true,
+    triggerOnce: true,
     threshold: "0",
     rootMargin: "-10px",
   });
