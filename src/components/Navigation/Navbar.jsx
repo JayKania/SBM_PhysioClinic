@@ -25,6 +25,9 @@ const Navbar = ({ isMenuOpen, toggleMenu, isNavVisible }) => {
             <a href="#doctors">Doctors</a>
           </div>
           <div className="nav-item">
+            <a href="#gallery">Gallery</a>
+          </div>
+          <div className="nav-item">
             <a href="#contact">Contact Us</a>
           </div>
           <div onClick={toggleMenu} className="burger-menu">
@@ -63,6 +66,12 @@ const StyledNav = styled.div`
     flex-direction: row-reverse;
     justify-content: space-between;
   }
+
+  @media only screen and (max-width: 912px) {
+    width: 90%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 `;
 
 const StyledLogo = styled.div`
@@ -89,6 +98,17 @@ const StyledLogo = styled.div`
     img {
       max-height: 75px;
       width: 75px;
+    }
+  }
+  // tablet
+  @media only screen and (max-width: 912px) {
+    flex-direction: row-reverse;
+    span {
+      font-size: 1.3rem;
+    }
+    img {
+      max-height: 80px;
+      width: 80px;
     }
   }
 `;
@@ -138,7 +158,7 @@ const StyledNavComponents = styled.div`
   }
 
   // mobile
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 912px) {
     .nav-item {
       display: none;
     }

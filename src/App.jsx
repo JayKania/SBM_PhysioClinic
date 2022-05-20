@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Doctors from "./components/Doctors/Doctors";
 import ImageGallery from "./components/Gallery/ImageGallery";
@@ -12,49 +12,29 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrolly, setLastScrollY] = useState(0);
-  const servicesRef = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const controlNavBar = () => {
-    if (typeof window !== undefined) {
-      if (window.scrollY > lastScrolly) {
-        setIsNavVisible(false);
-      } else {
-        setIsNavVisible(true);
-      }
-      setLastScrollY(window.scrollY);
-    }
-  };
-
   useEffect(() => {
-    if (typeof window !== undefined) {
+    const controlNavBar = () => {
+      if (window !== undefined) {
+        if (window.scrollY > lastScrolly) {
+          setIsNavVisible(false);
+        } else {
+          setIsNavVisible(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+    if (window !== undefined) {
       window.addEventListener("scroll", controlNavBar);
     }
     return () => {
       window.removeEventListener("scroll", controlNavBar);
     };
   }, [lastScrolly]);
-
-  const observerConfig = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
-
-  const observerFn = (entries, observer) => {
-    console.log(entries[0].isIntersecting);
-  };
-
-  const observer = new IntersectionObserver(observerFn, observerConfig);
-
-  useEffect(() => {
-    // console.log(servicesRef.current);
-    observer.observe(servicesRef.current);
-    return () => observer.unobserve(servicesRef.current);
-  }, []);
 
   return (
     <div className="App">
@@ -66,9 +46,9 @@ const App = () => {
         isNavVisible={isNavVisible}
       />
       <Home />
-      <Services reference={servicesRef} />
-      <Doctors />
+      <Services />
       <ImageGallery />
+      <Doctors />
     </div>
   );
 };

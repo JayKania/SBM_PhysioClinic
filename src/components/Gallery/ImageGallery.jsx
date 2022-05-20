@@ -38,7 +38,7 @@ const responsiveOptions = [
 const itemTemplate = (image) => {
   return (
     <StyledImageCard>
-      <img src={image.img} alt="interior img" srcset="" />
+      <img src={image.img} alt="interior img" />
     </StyledImageCard>
   );
 };
@@ -74,6 +74,7 @@ const StyledHeader = styled.div`
 
 const StyledImageGallery = styled.div`
   /* padding: 2rem; */
+  margin-top: 3rem;
   .p-carousel {
     width: 90%;
     margin: 0 auto;
@@ -145,9 +146,9 @@ const StyledImageCard = styled.div`
   margin: 1rem 1rem;
   border-radius: 15px;
   overflow: hidden;
-  -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-  -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
-  box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
+  -webkit-box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
+  -moz-box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
+  box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
   transform: translateY(-2%);
   background: white;
   img {

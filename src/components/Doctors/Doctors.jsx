@@ -1,32 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import DoctorCard from "./DoctorCard";
 import { doctors_data } from "./doctors_data";
 
 const Doctors = () => {
   const doctors = doctors_data;
-  const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(() => {
-    return window.screen.width > 480 ? 3 : 1;
-  });
 
-  const [current, setCurrent] = useState(0);
-
-  const changeCurrentDoc = (event) => {
-    if (event.target.getAttribute("name") === "next") {
-      if (current === 7) {
-        setCurrent(0);
-      } else {
-        setCurrent(current + 1);
-      }
-    } else {
-      if (current === 0) {
-        setCurrent(7);
-      } else {
-        setCurrent(current - 1);
-      }
-    }
-  };
   const cards = doctors.map((doctor, index) => {
     return (
       <DoctorCard
@@ -35,7 +14,6 @@ const Doctors = () => {
         qual={doctor.qualifications}
         bio={doctor.data}
         key={index}
-        visibility={index === current ? "visible" : "hidden"}
       />
     );
   });

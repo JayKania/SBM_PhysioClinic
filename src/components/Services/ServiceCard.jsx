@@ -1,11 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
-const ServiceCard = ({ title, data, img }) => {
+const ServiceCard = ({ title, data }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: "0",
+    rootMargin: "-25px",
+  });
+
   return (
-    <StyledServiceCard>
+    <StyledServiceCard
+      ref={ref}
+      className={`${inView ? "opacity-1" : "opacity-0"}`}
+      // className="opacity-0"
+    >
       <StyledContent>
-        <h4 className="title">{title}</h4>
+        <h4 className={`title`}>{title}</h4>
         <div className="data">{data}</div>
       </StyledContent>
     </StyledServiceCard>
@@ -18,26 +29,33 @@ const StyledServiceCard = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* box-shadow: 0px 2px 5px grey; */
   -webkit-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   -moz-box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
 
-  /* border: 0.1px solid black; */
   border-radius: 5px;
   position: relative;
-  max-height: 300px;
-  /* border-top: 4px solid rgb(162, 188, 218); */
+  max-height: max-content;
   background: white;
   padding: 2rem;
   margin-top: 1rem;
-  transition: box-shadow 250ms ease, transform 250ms ease;
+  transition: box-shadow 250ms ease, transform 500ms ease;
+
+  &.opacity-0 {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  &.opacity-1 {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   // mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;
     max-width: 100%;
   }
+  // tablet
   @media only screen and (max-width: 912px) {
     padding: 1rem;
   }

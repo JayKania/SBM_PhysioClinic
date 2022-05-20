@@ -63,6 +63,10 @@ const StyledMenuWrapper = styled.div`
     box-shadow: 0px 2px 20px 10px grey;
     transform: translateX(0%);
   }
+
+  @media only screen and (max-width: 912px) {
+    width: 50%;
+  }
 `;
 
 const StyledMenu = styled.div`

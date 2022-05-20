@@ -1,9 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
-const DoctorCard = ({ img, name, qual, bio, visibility }) => {
+const DoctorCard = ({ img, name, qual, bio }) => {
+  const { ref, inView } = useInView({
+    // triggerOnce: true,
+    threshold: "0",
+    rootMargin: "-10px",
+  });
+
   return (
-    <StyledDoctorCard className={visibility}>
+    <StyledDoctorCard
+      ref={ref}
+      className={`${inView ? "opacity-1" : "opacity-0"}`}
+    >
       <div className="img">
         <img src={img} alt="doc_img" />
       </div>
@@ -37,7 +47,7 @@ const StyledDoctorCard = styled.div`
   position: relative;
   min-height: 280px;
   border-top: 4px solid rgb(162, 188, 218);
-  transition: box-shadow 250ms ease, transform 250ms ease;
+  transition: box-shadow 250ms ease, transform 500ms ease;
   /* padding: 0.5rem; */
   .img {
     position: absolute;
@@ -54,6 +64,16 @@ const StyledDoctorCard = styled.div`
       object-fit: cover;
     }
   }
+
+  &.opacity-0 {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  &.opacity-1 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   //mobile
   @media only screen and (max-width: 480px) {
     flex-basis: 45%;
