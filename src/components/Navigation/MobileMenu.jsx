@@ -27,15 +27,15 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           </div>
           <div onClick={toggleMenu}>
             <div>
-              <i className="pi pi-users" style={{ fontSize: "1.2em" }}></i>
-            </div>
-            <a href="#doctors">Doctors</a>
-          </div>
-          <div onClick={toggleMenu}>
-            <div>
               <i className="pi pi-camera" style={{ fontSize: "1.2em" }}></i>
             </div>
             <a href="#gallery">Gallery</a>
+          </div>
+          <div onClick={toggleMenu}>
+            <div>
+              <i className="pi pi-users" style={{ fontSize: "1.2em" }}></i>
+            </div>
+            <a href="#doctors">Doctors</a>
           </div>
           <div onClick={toggleMenu}>
             <div>
@@ -60,7 +60,7 @@ const StyledMenuWrapper = styled.div`
   transition: transform 250ms ease;
   background-image: linear-gradient(-45deg, #00334c 50%, #00557f);
   &.active {
-    box-shadow: 0px 2px 20px 10px grey;
+    /* box-shadow: 0px 2px 10px 5px grey; */
     transform: translateX(0%);
   }
 

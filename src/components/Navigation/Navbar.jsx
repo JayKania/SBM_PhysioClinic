@@ -55,7 +55,7 @@ const StyledNavWrapper = styled.div`
 const StyledNav = styled.div`
   margin: 0 auto;
   background: white;
-  width: 90%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,7 +68,7 @@ const StyledNav = styled.div`
   }
 
   // tablet
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 912px) {
     width: 95%;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -158,22 +158,16 @@ const StyledNavComponents = styled.div`
     display: none;
   }
 
-  // mobile
-  @media only screen and (max-width: 912px) {
-    .nav-item {
-      display: none;
-    }
-    .burger-menu {
-      display: block;
-    }
-  }
-
   // tablet
   @media only screen and (max-width: 912px) {
     .nav-item {
+      display: none;
       a {
         font-size: 1.2rem;
       }
+    }
+    .burger-menu {
+      display: block;
     }
   }
 `;

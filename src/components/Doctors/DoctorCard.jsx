@@ -6,7 +6,6 @@ const DoctorCard = ({ img, name, qual, bio }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: "0",
-    rootMargin: "-10px",
   });
 
   return (
@@ -47,7 +46,7 @@ const StyledDoctorCard = styled.div`
   position: relative;
   min-height: 280px;
   border-top: 4px solid rgb(162, 188, 218);
-  transition: box-shadow 250ms ease, transform 500ms ease;
+  transition: box-shadow 250ms ease, transform 500ms ease, opacity 500ms ease;
   /* padding: 0.5rem; */
   .img {
     position: absolute;

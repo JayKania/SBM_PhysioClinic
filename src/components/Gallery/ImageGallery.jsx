@@ -46,10 +46,12 @@ const itemTemplate = (image) => {
 const StyledHeader = styled.div`
   h1 {
     font-size: 3.5rem;
-    color: #3f4c6e;
+    /* color: #3f4c6e; */
+    color: white;
     font-weight: 900;
     letter-spacing: 1.5px;
     text-align: center;
+    /* margin-top: 2rem; */
   }
   p {
     margin: 2rem auto;
@@ -57,7 +59,8 @@ const StyledHeader = styled.div`
     font-weight: 500;
     font-size: 1.2rem;
     width: 35%;
-    color: #3f4c6e;
+    /* color: #3f4c6e; */
+    color: white;
   }
 
   // mobile
@@ -73,7 +76,10 @@ const StyledHeader = styled.div`
 `;
 
 const StyledImageGallery = styled.div`
-  /* padding: 2rem; */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(-45deg, #00334c 50%, #00557f) right;
+
   margin-top: 3rem;
   .p-carousel {
     width: 90%;
@@ -82,12 +88,15 @@ const StyledImageGallery = styled.div`
       .p-carousel-container {
         button {
           background: white;
-          color: rgb(147, 147, 227);
+          color: #00557f;
           border-radius: 50%;
           box-shadow: 0px 2px 5px grey;
           transition: transform 250ms ease, box-shadow 250ms ease;
           :hover {
-            color: rgb(147, 147, 227);
+            background: white;
+            /* color: rgb(147, 147, 227); */
+            color: #00557f;
+
             transform: translateY(-5%);
             box-shadow: 0px 2px 10px grey;
           }
@@ -140,23 +149,37 @@ const StyledImageGallery = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 912px) {
+    .p-carousel {
+      width: 100%;
+    }
+  }
 `;
 
 const StyledImageCard = styled.div`
   margin: 1rem 1rem;
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
-  -moz-box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
-  box-shadow: 6px 6px 20px -5px rgba(105, 105, 105, 0.75);
+  height: 400px;
+  -webkit-box-shadow: 6px 6px 15px -5px rgba(105, 105, 105, 0.75);
+  -moz-box-shadow: 6px 6px 15px -5px rgba(105, 105, 105, 0.75);
+  box-shadow: 6px 6px 15px -5px rgba(105, 105, 105, 0.75);
   transform: translateY(-2%);
   background: white;
   img {
     height: 100%;
     width: 100%;
+    /* object-fit: cover; */
   }
+
   // mobile
   @media only screen and (max-width: 482px) {
+    height: 270px;
+  }
+
+  // tablet
+  @media only screen and (min-width: 780px) and (max-width: 912px) {
+    height: 300px;
   }
 `;
 

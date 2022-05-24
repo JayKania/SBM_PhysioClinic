@@ -36,10 +36,14 @@ const StyledServiceCard = styled.div`
   border-radius: 5px;
   position: relative;
   max-height: max-content;
-  background: white;
   padding: 2rem;
   margin-top: 1rem;
-  transition: box-shadow 250ms ease, transform 500ms ease;
+  transition: box-shadow 250ms ease, transform 500ms ease, opacity 500ms ease,
+    background-position 500ms ease;
+
+  :hover {
+    background-position: left;
+  }
 
   &.opacity-0 {
     opacity: 0;
