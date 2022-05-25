@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Doctors from "./components/Doctors/Doctors";
+import Footer from "./components/Footer/Footer";
 import ImageGallery from "./components/Gallery/ImageGallery";
 import Home from "./components/Home/Home";
 import MobileMenu from "./components/Navigation/MobileMenu";
@@ -49,6 +50,7 @@ const App = () => {
       <Services />
       <ImageGallery />
       <Doctors />
+      <Footer />
     </div>
   );
 };

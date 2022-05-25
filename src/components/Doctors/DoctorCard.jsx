@@ -46,7 +46,7 @@ const StyledDoctorCard = styled.div`
   position: relative;
   min-height: 280px;
   border-top: 4px solid rgb(162, 188, 218);
-  transition: box-shadow 250ms ease, transform 500ms ease, opacity 500ms ease;
+  transition: transform 500ms ease, opacity 500ms ease;
   /* padding: 0.5rem; */
   .img {
     position: absolute;

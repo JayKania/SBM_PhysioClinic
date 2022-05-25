@@ -11,7 +11,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           style={{ fontSize: "1.2em" }}
           onClick={toggleMenu}
         ></i>
-        <h3>Sbm Physioclinic</h3>
+        <h3>SBM Physioclinic</h3>
         <StyledLinks className="links">
           <div onClick={toggleMenu}>
             <div>
