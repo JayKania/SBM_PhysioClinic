@@ -28,7 +28,7 @@ const Navbar = ({ isMenuOpen, toggleMenu, isNavVisible }) => {
             <a href="#gallery">Gallery</a>
           </div>
           <div className="nav-item">
-            <a href="#contact">Contact Us</a>
+            <a href="#reviews">Reviews</a>
           </div>
           <div onClick={toggleMenu} className="burger-menu">
             <i className="pi pi-bars" style={{ fontSize: "1em" }}></i>

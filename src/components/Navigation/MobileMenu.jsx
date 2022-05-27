@@ -41,7 +41,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
             <div>
               <i className="pi pi-phone" style={{ fontSize: "1.2em" }}></i>
             </div>
-            <a href="#contact">Contact Us</a>
+            <a href="#reviews">Reviews</a>
           </div>
         </StyledLinks>
       </StyledMenu>

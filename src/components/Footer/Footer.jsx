@@ -12,7 +12,7 @@ const Footer = () => {
           <a href="#services">Services</a>
           <a href="#gallery">Gallery</a>
           <a href="#doctors">Doctors</a>
-          <a href="#contact">Contact Us</a>
+          <a href="#reviews">Reviews</a>
         </StyledSiteLinks>
         <StyledServices className="services">
           <h3>Services</h3>
@@ -131,6 +131,7 @@ const StyledSiteLinks = styled.div`
     text-decoration: none;
     color: white;
     margin: 5px 0;
+    width: fit-content;
   }
 `;
 const StyledServices = styled.div`
@@ -142,6 +143,7 @@ const StyledServices = styled.div`
     text-decoration: none;
     color: white;
     margin: 5px 0;
+    width: fit-content;
   }
 `;
 const StyledContact = styled.div`
@@ -152,6 +154,7 @@ const StyledContact = styled.div`
   a {
     text-decoration: none;
     color: white;
+    width: fit-content;
   }
   .contact-no,
   .location {

@@ -25,14 +25,11 @@ const Services = ({ reference }) => {
 };
 
 const StyledServices = styled.div`
-  /* background: #e8f6fe; */
   margin: 0 auto;
   padding: 1rem 0 1rem 0;
   position: relative;
 
   h1 {
-    /* margin-top: -5rem; */
-    /* padding-top: 10rem; */
     font-size: 3.5rem;
     color: #3f4c6e;
     font-weight: 900;
@@ -54,10 +51,8 @@ const StyledServices = styled.div`
     font-weight: 700;
     font-size: 1.2rem;
     color: #3f4c6e;
-    /* border: 1px solid #3f4c6e; */
     padding: 1rem;
     border-radius: 5px;
-    /* box-shadow: 0px 1px 5px #3f4c6e; */
   }
 
   // mobile

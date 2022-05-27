@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import MobileMenu from "./components/Navigation/MobileMenu";
 import Navbar from "./components/Navigation/Navbar";
 import Overlay from "./components/Overlay/Overlay";
+import Reviews from "./components/Reviews/Reviews";
 import Services from "./components/Services/Services";
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
       <Services />
       <ImageGallery />
       <Doctors />
+      <Reviews />
       <Footer />
     </div>
   );
