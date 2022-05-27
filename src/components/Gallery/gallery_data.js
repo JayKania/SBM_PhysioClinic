@@ -10,6 +10,8 @@ import interior_9 from "../../images/interior (9).jpg";
 import interior_10 from "../../images/interior (10).jpg";
 import interior_11 from "../../images/interior (11).jpg";
 import interior_12 from "../../images/interior (12).jpg";
+import interior_13 from "../../images/interior (13).jpg";
+import interior_14 from "../../images/interior (14).jpg";
 
 export const images = [
   { img: interior_1 },
@@ -24,4 +26,6 @@ export const images = [
   { img: interior_10 },
   { img: interior_11 },
   { img: interior_12 },
+  { img: interior_13 },
+  { img: interior_14 },
 ];

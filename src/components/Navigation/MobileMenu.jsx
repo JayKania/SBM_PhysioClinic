@@ -39,7 +39,10 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           </div>
           <div onClick={toggleMenu}>
             <div>
-              <i className="pi pi-phone" style={{ fontSize: "1.2em" }}></i>
+              <i
+                className="pi pi-credit-card"
+                style={{ fontSize: "1.2em" }}
+              ></i>
             </div>
             <a href="#reviews">Reviews</a>
           </div>

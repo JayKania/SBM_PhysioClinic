@@ -18,20 +18,16 @@ const StyledReviewCard = styled.div`
   height: 300px;
   box-shadow: 6px 6px 24px -5px rgba(105, 105, 105, 0.75);
   overflow-y: scroll;
-
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
-
   ::-webkit-scrollbar {
     width: 5px;
     padding: 0;
   }
-
   ::-webkit-scrollbar-track {
     width: 5px;
     background: transparent;
   }
-
   ::-webkit-scrollbar-thumb {
     background-color: rgba(155, 155, 155, 0.5);
     border-radius: 20px;
@@ -43,7 +39,6 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   .title {
     font-size: 1.2rem;
     font-weight: 700;

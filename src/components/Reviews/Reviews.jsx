@@ -38,7 +38,6 @@ const StyledReviews = styled.div`
     width: 35%;
     color: #3f4c6e;
   }
-
   // mobile
   @media only screen and (max-width: 480px) {
     h1 {
@@ -55,8 +54,7 @@ const StyledCards = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   overflow-x: hidden;
-  padding: 10px 0;
-
+  padding: 2rem 0;
   :hover {
     .cards-container {
       animation-play-state: paused;
@@ -68,9 +66,7 @@ const StyledCardContainer = styled.div`
   display: flex;
   max-width: 1000px;
   margin: 0 auto;
-
   animation: banner 35s linear infinite;
-
   @keyframes banner {
     0% {
       transform: translate3d(0, 0, 0);
@@ -78,6 +74,9 @@ const StyledCardContainer = styled.div`
     100% {
       transform: translate3d(-2640px, 0, 0);
     }
+  }
+  @media only screen and (max-width: 482px) {
+    animation: banner 50s linear infinite;
   }
 `;
 
